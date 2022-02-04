@@ -75,8 +75,9 @@ class entry:
 
         #color target word
         which = int(self.targetIndex)-1
-
         outstring[which] = "\033[31m" + outstring[which] + "\033[0m"
+
+        #interleave sentence and indices
         interList = index + outstring
         interList[::2] = index
         interList[1::2] = outstring
@@ -102,22 +103,20 @@ class entry:
         #Spacing
         print("\n")
 
-
-        #function for delineating the tensed clause boundaries:
-        #print sentence with word boundaries numbered
-        #take user input (start, end)
-        #slice sentence with new boundaries and store in self.tensedClause
-
     def printPrep(self, offset):
         sentence = self.sentence.split()
         index = [item for item in range(0, len(sentence)+offset)]
         index = ["\033[32m" + str(item) + "\033[0m" for item in index]
         self.printFormat(index, sentence)
-        return sentence
+        
+        #function for delineating the tensed clause boundaries:
+        #print sentence with word boundaries numbered
+        #take user input (start, end)
+        #slice sentence with new boundaries and store in self.tensedClause
 
     def markTensedClause(self):
-        sentence = self.printPrep(1)
-
+        self.printPrep(1)
+        outSentence = self.sentence.split()
         #print options and handle user input
         inputOpts = "> Input options:\t\033[36m#,#\033[0m = Clause range (start_index, end_index)\n\t\t\t\033[36m#,x\033[0m = Clause range (start_index, end of sentence)\n\t\t\t\033[36ma\033[0m = full line\n\t\t\t\033[36mx\033[0m = incomplete\n\t\t\t\033[36mCTRL+C\033[0m = Exit\n"
         print("\n" + inputOpts)
@@ -135,10 +134,10 @@ class entry:
                     bounds = clauseInput.split(",")
                     #case for "#,x" = # to end of sentence
                     if clauseInput[-1] == "x":
-                        return " ".join(sentence[int(bounds[0]):])
+                        return " ".join(outSentence[int(bounds[0]):])
                     #case for "#,#" = start,end
                     else:
-                        return " ".join(sentence[int(bounds[0]):int(bounds[1])])
+                        return " ".join(outSentence[int(bounds[0]):int(bounds[1])])
                 else:
                     print("\n \033[31m!Invalid input\n")
             except ValueError:

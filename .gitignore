@@ -1,5 +1,7 @@
 #ignore the venv
 venv/
+test/
 
 #ignore the test files
 *.txt
+*.tsv

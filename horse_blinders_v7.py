@@ -19,15 +19,10 @@
 #take user coding input for each factor
 #output (append) the formatted entry instance to the outputfile
 
-#Things to add (based on meeting 12/10/21)
-#   -Display item metadata along with sentence at top
-#   -Highlight target negative word (reference target index to differentiate multiple targets)
-#   -Add input options  
-#       -Notes: ?______ = "review: _____"
-#       -TC bounds: #,x = here to end of the line 
-#   -
-#   -
-#   -
+#Things to add (based on meeting 2/4/21)
+#   - Highlight tensed clause on verb page OR desaturate everything else but tensed clause
+#   - Add option to indicate where the MV is in its context in tensed clause output
+#   - "Finished Session" message when last sentence in session is coded
 #   -
 
 import os

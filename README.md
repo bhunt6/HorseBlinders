@@ -74,12 +74,12 @@ Next, run the script with the following command, substituting the name of the in
 
 ### *Windows*
 ```bash
-python horse_blinders_v6.py [inputfile.txt] [outputfile.txt]
+python hb09.py [inputfile.txt] [outputfile.txt]
 ```
 
 ### *OSx*
 ```bash
-python3 horse_blinders_v6.py [inputfile.txt] [outputfile.txt]
+python3 hb09.py [inputfile.txt] [outputfile.txt]
 ```
 
 On startup, the splash page displays the logo, attributions, and a brief description of the purpose and functionality of the program.

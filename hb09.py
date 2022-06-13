@@ -221,7 +221,7 @@ def splashScreen(inputFileName, outputFileName):
                                         ||                                                 ||
                                         ||                 \033[32mHorse-Blinders\033[0m                  ||
                                         ||              Manual Coding Utility              ||
-                                        ||                   Version 0.6                   ||
+                                        ||                   Version 0.9                   ||
                                         ||                  Benjamin Hunt                  ||
                                         ||                    1/28/2022                    ||
                                         ++-------------------------------------------------++
